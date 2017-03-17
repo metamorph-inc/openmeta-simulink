@@ -41,18 +41,30 @@ def start_pdb():
     import pdb; pdb.set_trace()
 
 def log_object(o, indent=0):
-    log("{2}{0} - {1}".format(o.name, o.type.name, ' '*indent))
+    if o.type.name == "GenericDomainModel":
+        log("{2}{0} - {1} - {3} - {4}".format(o.name, o.type.name, '  '*indent, o.Domain, o.Type))
+    if o.type.name == "GenericDomainModelParameter":
+        log("{2}{0} - {1} - {3}".format(o.name, o.type.name, '  '*indent, get_adjacent_param_value(o)))
+    else:
+        log("{2}{0} - {1}".format(o.name, o.type.name, '  '*indent))
+
     for child in o.children():
-        log_object(child, indent + 2)
+        log_object(child, indent + 1)
 
+def get_adjacent_param_value(domainParam):
+    adjacent = domainParam.adjacent()
 
+    if(len(adjacent) != 1):
+        return "Too many or too few connected nodes! ({0})".format(len(adjacent))
+    else:
+        return adjacent[0].Value
 
 # This is the entry point    
 def invoke(focusObject, rootObject, componentParameters, **kwargs):
     log(focusObject.name)
     print repr(focusObject.name)
-    log_object(focusObject)
     #start_pdb()
+    log_object(focusObject)
     componentParameters["runCommand"] = "cmd /c dir"
 
 # Allow calling this script with a .mga file as an argument    

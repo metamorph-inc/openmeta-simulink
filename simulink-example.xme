@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project SYSTEM "mga.dtd">
 
-<project guid="{D5797D74-7933-4B1F-812B-B56697E94918}" cdate="Thu Mar 16 11:16:37 2017" mdate="Thu Mar 16 11:16:37 2017" version="" metaguid="{88457E17-E940-0694-3228-81E7A6B0DF6B}" metaversion="14.13-t13" metaname="CyPhyML">
+<project guid="{3ABE7BCC-93D9-468E-96A0-9E151443101D}" cdate="Thu Mar 16 11:16:37 2017" mdate="Thu Mar 16 11:16:37 2017" version="" metaguid="{88457E17-E940-0694-3228-81E7A6B0DF6B}" metaversion="14.13-t13" metaname="CyPhyML">
 	<name>RootFolder</name>
 	<comment></comment>
 	<author></author>
@@ -25449,8 +25449,8 @@
 					<attribute kind="Author" status="meta">
 						<value></value>
 					</attribute>
-					<attribute kind="Domain" status="meta">
-						<value></value>
+					<attribute kind="Domain">
+						<value>simulink</value>
 					</attribute>
 					<attribute kind="FilePathWithinResource" status="meta">
 						<value></value>
@@ -25458,8 +25458,8 @@
 					<attribute kind="Notes" status="meta">
 						<value></value>
 					</attribute>
-					<attribute kind="Type" status="meta">
-						<value></value>
+					<attribute kind="Type">
+						<value>simulink/Math Operations/Sum</value>
 					</attribute>
 					<model id="id-0065-00000283" kind="GenericDomainModelPort" role="GenericDomainModelPort" guid="{09e4fbdd-9be1-4d71-9d9f-c49efc0e3da5}" relid="0x2" childrelidcntr="0x0">
 						<name>1</name>
@@ -28915,7 +28915,7 @@
 					<connpoint role="src" target="id-0065-0000029e" refs="id-0067-00000364"/>
 				</connection>
 			</model>
-			<model id="id-0065-000002a1" kind="ComponentAssembly" guid="{3e95016e-7164-41d9-b6b4-77f289a3071c}" relid="0x4" childrelidcntr="0x7">
+			<model id="id-0065-000002a1" kind="ComponentAssembly" guid="{3e95016e-7164-41d9-b6b4-77f289a3071c}" relid="0x4" childrelidcntr="0x16">
 				<name>Multi-instance</name>
 				<attribute kind="Cardinality" status="meta">
 					<value></value>
@@ -28948,7 +28948,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>721,217</value>
+								<value>1225,273</value>
 							</regnode>
 						</regnode>
 					</regnode>
@@ -28966,13 +28966,13 @@
 					</attribute>
 				</reference>
 				<reference id="id-0067-0000036b" kind="ComponentRef" role="ComponentRef" guid="{bf5564ba-da8e-483a-8417-ba526ab08bb8}" relid="0x2" referred="id-0065-00000260">
-					<name>PulseGenerator</name>
+					<name>PulseGenerator1</name>
 					<regnode name="PartRegs" status="undefined">
 						<value></value>
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>154,119</value>
+								<value>581,182</value>
 							</regnode>
 						</regnode>
 					</regnode>
@@ -28990,13 +28990,13 @@
 					</attribute>
 				</reference>
 				<reference id="id-0067-0000036c" kind="ComponentRef" role="ComponentRef" guid="{9a27fff6-ccfd-4ef9-9bb0-579f7a35b03f}" relid="0x3" referred="id-0065-00000260">
-					<name>PulseGenerator</name>
+					<name>PulseGenerator2</name>
 					<regnode name="PartRegs" status="undefined">
 						<value></value>
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>161,273</value>
+								<value>588,336</value>
 							</regnode>
 						</regnode>
 					</regnode>
@@ -29020,7 +29020,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>462,217</value>
+								<value>966,273</value>
 							</regnode>
 						</regnode>
 					</regnode>
@@ -29037,6 +29037,450 @@
 						<value></value>
 					</attribute>
 				</reference>
+				<reference id="id-0067-00000437" kind="Parameter" role="Parameter" guid="{3198da13-041a-43c2-9bb6-62531b5d5786}" relid="0x8">
+					<name>Period</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>308,140</value>
+							</regnode>
+						</regnode>
+						<regnode name="SolidModeling" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>28,77</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>28,77</value>
+							</regnode>
+						</regnode>
+						<regnode name="ValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>28,77</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="ComputationType" status="meta">
+						<value>Addition</value>
+					</attribute>
+					<attribute kind="DataType" status="meta">
+						<value>String</value>
+					</attribute>
+					<attribute kind="DefaultValue" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Description" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Dimension" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Disable" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="ID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ManagedGUID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Range" status="meta">
+						<value>-inf..inf</value>
+					</attribute>
+					<attribute kind="Type" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Value">
+						<value>2</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-00000438" kind="Parameter" role="Parameter" guid="{2c533639-584b-45b3-a7a0-5dfdcf463b27}" relid="0x9">
+					<name>PulseType</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>308,182</value>
+							</regnode>
+						</regnode>
+						<regnode name="SolidModeling" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>70,217</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>70,217</value>
+							</regnode>
+						</regnode>
+						<regnode name="ValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>70,217</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="ComputationType" status="meta">
+						<value>Addition</value>
+					</attribute>
+					<attribute kind="DataType" status="meta">
+						<value>String</value>
+					</attribute>
+					<attribute kind="DefaultValue" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Description" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Dimension" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Disable" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="ID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ManagedGUID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Range" status="meta">
+						<value>-inf..inf</value>
+					</attribute>
+					<attribute kind="Type" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Value">
+						<value>Time based</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-00000439" kind="Parameter" role="Parameter" guid="{da3906a3-cda4-43d6-a492-806fc4243f93}" relid="0xa">
+					<name>PulseWidth</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>308,224</value>
+							</regnode>
+						</regnode>
+						<regnode name="SolidModeling" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>77,266</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>77,266</value>
+							</regnode>
+						</regnode>
+						<regnode name="ValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>77,266</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="ComputationType" status="meta">
+						<value>Addition</value>
+					</attribute>
+					<attribute kind="DataType" status="meta">
+						<value>String</value>
+					</attribute>
+					<attribute kind="DefaultValue" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Description" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Dimension" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Disable" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="ID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ManagedGUID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Range" status="meta">
+						<value>-inf..inf</value>
+					</attribute>
+					<attribute kind="Type" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Value">
+						<value>60</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-0000043a" kind="Parameter" role="Parameter" guid="{f2b8f63f-9517-457d-9841-5d4d13dde567}" relid="0xb">
+					<name>Period</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>308,364</value>
+							</regnode>
+						</regnode>
+						<regnode name="SolidModeling" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>28,77</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>28,77</value>
+							</regnode>
+						</regnode>
+						<regnode name="ValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>28,77</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="ComputationType" status="meta">
+						<value>Addition</value>
+					</attribute>
+					<attribute kind="DataType" status="meta">
+						<value>String</value>
+					</attribute>
+					<attribute kind="DefaultValue" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Description" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Dimension" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Disable" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="ID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ManagedGUID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Range" status="meta">
+						<value>-inf..inf</value>
+					</attribute>
+					<attribute kind="Type" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Value">
+						<value>5</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-0000043b" kind="Parameter" role="Parameter" guid="{31abffac-499c-4342-9616-b80894215072}" relid="0xc">
+					<name>PulseType</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>308,406</value>
+							</regnode>
+						</regnode>
+						<regnode name="SolidModeling" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>70,217</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>70,217</value>
+							</regnode>
+						</regnode>
+						<regnode name="ValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>70,217</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="ComputationType" status="meta">
+						<value>Addition</value>
+					</attribute>
+					<attribute kind="DataType" status="meta">
+						<value>String</value>
+					</attribute>
+					<attribute kind="DefaultValue" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Description" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Dimension" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Disable" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="ID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ManagedGUID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Range" status="meta">
+						<value>-inf..inf</value>
+					</attribute>
+					<attribute kind="Type" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Value">
+						<value>Time based</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-0000043c" kind="Parameter" role="Parameter" guid="{fd6fcbb2-b8f9-4a51-83a4-504914c74aa5}" relid="0xd">
+					<name>PulseWidth</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>308,448</value>
+							</regnode>
+						</regnode>
+						<regnode name="SolidModeling" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>77,266</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>77,266</value>
+							</regnode>
+						</regnode>
+						<regnode name="ValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>77,266</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="ComputationType" status="meta">
+						<value>Addition</value>
+					</attribute>
+					<attribute kind="DataType" status="meta">
+						<value>String</value>
+					</attribute>
+					<attribute kind="DefaultValue" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Description" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Dimension" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Disable" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="ID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ManagedGUID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Range" status="meta">
+						<value>-inf..inf</value>
+					</attribute>
+					<attribute kind="Type" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Value">
+						<value>30</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-0000043e" kind="Property" role="Property" guid="{0a6ab31b-3eef-467a-b09a-c51337b92f87}" relid="0x15">
+					<name>Property</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>798,91</value>
+							</regnode>
+						</regnode>
+						<regnode name="SolidModeling" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>798,91</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>798,91</value>
+							</regnode>
+						</regnode>
+						<regnode name="ValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>798,91</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="ComputationType" status="meta">
+						<value>Addition</value>
+					</attribute>
+					<attribute kind="DataType" status="meta">
+						<value>String</value>
+					</attribute>
+					<attribute kind="DefaultValue" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Description" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Dimension" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Disable" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="ID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="IsProminent" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="ManagedGUID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Tolerance" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Type" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Value">
+						<value>+-</value>
+					</attribute>
+				</reference>
 				<connection id="id-0068-0000006c" kind="ConnectorComposition" role="ConnectorComposition" guid="{1dd598fb-91a4-477d-a787-82db7c35f3cb}" relid="0x5">
 					<name>ConnectorComposition</name>
 					<connpoint role="src" target="id-0065-00000263" refs="id-0067-0000036b"/>
@@ -29051,6 +29495,62 @@
 					<name>ConnectorComposition</name>
 					<connpoint role="dst" target="id-0065-00000268" refs="id-0067-0000036a"/>
 					<connpoint role="src" target="id-0065-00000288" refs="id-0067-0000036d"/>
+				</connection>
+				<connection id="id-0068-0000010d" kind="ValueFlow" role="ValueFlow" guid="{cb0bace0-9de6-408e-9888-c64d1e692fde}" relid="0xe">
+					<name>ValueFlow</name>
+					<attribute kind="FormulaVariableName" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0067-0000033a" refs="id-0067-0000036b"/>
+					<connpoint role="src" target="id-0067-00000437"/>
+				</connection>
+				<connection id="id-0068-0000010e" kind="ValueFlow" role="ValueFlow" guid="{635aaa63-d647-4dad-8b7b-ff7e77433261}" relid="0xf">
+					<name>ValueFlow</name>
+					<attribute kind="FormulaVariableName" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0067-0000033b" refs="id-0067-0000036b"/>
+					<connpoint role="src" target="id-0067-00000438"/>
+				</connection>
+				<connection id="id-0068-0000010f" kind="ValueFlow" role="ValueFlow" guid="{d7fdc3ae-7386-4a3a-bcce-f6e3d24260c1}" relid="0x10">
+					<name>ValueFlow</name>
+					<attribute kind="FormulaVariableName" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0067-0000033c" refs="id-0067-0000036b"/>
+					<connpoint role="src" target="id-0067-00000439"/>
+				</connection>
+				<connection id="id-0068-00000110" kind="ValueFlow" role="ValueFlow" guid="{daca5b53-3625-4912-8e34-1b973375408d}" relid="0x11">
+					<name>ValueFlow</name>
+					<attribute kind="FormulaVariableName" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0067-0000033a" refs="id-0067-0000036c"/>
+					<connpoint role="src" target="id-0067-0000043a"/>
+				</connection>
+				<connection id="id-0068-00000111" kind="ValueFlow" role="ValueFlow" guid="{6b13384a-480e-400e-b15e-b4e38df52403}" relid="0x12">
+					<name>ValueFlow</name>
+					<attribute kind="FormulaVariableName" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0067-0000033b" refs="id-0067-0000036c"/>
+					<connpoint role="src" target="id-0067-0000043b"/>
+				</connection>
+				<connection id="id-0068-00000112" kind="ValueFlow" role="ValueFlow" guid="{247b7b76-a89a-4006-89c9-b12cc51bbe8e}" relid="0x13">
+					<name>ValueFlow</name>
+					<attribute kind="FormulaVariableName" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0067-0000033c" refs="id-0067-0000036c"/>
+					<connpoint role="src" target="id-0067-0000043c"/>
+				</connection>
+				<connection id="id-0068-00000113" kind="ValueFlow" role="ValueFlow" guid="{f3d5ea2e-ce60-4875-aee9-7894c911b37b}" relid="0x16">
+					<name>ValueFlow</name>
+					<attribute kind="FormulaVariableName" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0067-0000034c" refs="id-0067-0000036d"/>
+					<connpoint role="src" target="id-0067-0000043e"/>
 				</connection>
 			</model>
 			<model id="id-0065-000002a2" kind="ComponentAssembly" guid="{ed40ac32-30a2-4f9d-87fe-48ec5a374469}" relid="0x5" childrelidcntr="0x6">
@@ -29168,7 +29668,7 @@
 				</connection>
 			</model>
 		</folder>
-		<folder id="id-006a-0000001a" relid="0x8" childrelidcntr="0x2" kind="Testing" guid="{a7fd9491-aca5-4e67-bcfd-4a3a7397f026}">
+		<folder id="id-006a-0000001a" relid="0x8" childrelidcntr="0x3" kind="Testing" guid="{a7fd9491-aca5-4e67-bcfd-4a3a7397f026}">
 			<name>Testing</name>
 			<folder id="id-006a-0000001b" relid="0x2" childrelidcntr="0x1" kind="WorkflowDefinitionFolder" guid="{3dc0c3dc-0ba8-4027-8a9d-1c7fcfde1942}">
 				<name>WorkflowDefinitions</name>
@@ -29264,6 +29764,48 @@
 					</regnode>
 					<regnode name="decorator" isopaque="yes">
 						<value>MGA.Decorator.Workflow</value>
+					</regnode>
+				</reference>
+			</model>
+			<model id="id-0065-000003a8" kind="TestBench" guid="{069145af-4de2-48ca-b1a9-698a7517b3cc}" relid="0x3" childrelidcntr="0x4">
+				<name>TB_Multi-instance</name>
+				<regnode name="TestBenchUniqueName" isopaque="yes">
+					<value>TB_Multi-instance</value>
+				</regnode>
+				<attribute kind="CopyResults" status="meta">
+					<value>false</value>
+				</attribute>
+				<attribute kind="SpreadsheetLoc" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="Type" status="meta">
+					<value>SimpleCalc</value>
+				</attribute>
+				<reference id="id-0067-0000043f" kind="WorkflowRef" role="WorkflowRef" guid="{5c616dc3-52b6-49bd-b1fe-e1f88d3e5145}" relid="0x3" referred="id-0065-000002a4">
+					<name>GenerateSimulink</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>588,364</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="decorator" isopaque="yes">
+						<value>MGA.Decorator.Workflow</value>
+					</regnode>
+				</reference>
+				<reference id="id-0067-00000441" kind="TopLevelSystemUnderTest" role="TopLevelSystemUnderTest" guid="{26b09f61-e2d8-4f8b-ab5a-67e8e98e4341}" relid="0x4" referred="id-0065-000002a1">
+					<name>Multi-instance</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>238,105</value>
+							</regnode>
+						</regnode>
 					</regnode>
 				</reference>
 			</model>
