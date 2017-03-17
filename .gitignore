@@ -1,3 +1,4 @@
+# OpenMETA project stuff
 *.mga
 CyPhy2CAD.log
 archive/
@@ -21,3 +22,6 @@ components/**/std.out
 components/**/std.err
 components/**/config.pro
 MetaLink_*/
+ 
+# Python
+*.pyc

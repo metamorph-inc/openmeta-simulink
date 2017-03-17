@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project SYSTEM "mga.dtd">
 
-<project guid="{D4242957-F3EB-43F8-9875-68A16B7F0E48}" cdate="Thu Mar 16 11:16:37 2017" mdate="Thu Mar 16 11:16:37 2017" version="" metaguid="{88457E17-E940-0694-3228-81E7A6B0DF6B}" metaversion="14.13-t13" metaname="CyPhyML">
+<project guid="{D5797D74-7933-4B1F-812B-B56697E94918}" cdate="Thu Mar 16 11:16:37 2017" mdate="Thu Mar 16 11:16:37 2017" version="" metaguid="{88457E17-E940-0694-3228-81E7A6B0DF6B}" metaversion="14.13-t13" metaname="CyPhyML">
 	<name>RootFolder</name>
 	<comment></comment>
 	<author></author>
-	<folder id="id-006a-00000001" relid="0x1" childrelidcntr="0x7" kind="RootFolder" guid="{5a551243-8b30-4c73-a65f-140e36c87455}">
+	<folder id="id-006a-00000001" relid="0x1" childrelidcntr="0x8" kind="RootFolder" guid="{5a551243-8b30-4c73-a65f-140e36c87455}">
 		<name>RootFolder</name>
 		<folder id="id-006a-00000002" relid="0x1" childrelidcntr="0xd" libref="UnitLibrary QUDT" kind="RootFolder" guid="{930ea234-c97f-40fd-aa87-a272824dfa19}">
 			<name>UnitLibrary QUDT</name>
@@ -29166,6 +29166,106 @@
 					<connpoint role="dst" target="id-0065-00000268" refs="id-0067-00000370"/>
 					<connpoint role="src" target="id-0065-00000288" refs="id-0067-0000036f"/>
 				</connection>
+			</model>
+		</folder>
+		<folder id="id-006a-0000001a" relid="0x8" childrelidcntr="0x2" kind="Testing" guid="{a7fd9491-aca5-4e67-bcfd-4a3a7397f026}">
+			<name>Testing</name>
+			<folder id="id-006a-0000001b" relid="0x2" childrelidcntr="0x1" kind="WorkflowDefinitionFolder" guid="{3dc0c3dc-0ba8-4027-8a9d-1c7fcfde1942}">
+				<name>WorkflowDefinitions</name>
+				<model id="id-0065-000002a4" kind="Workflow" guid="{e1bba191-7d6f-4ba3-993f-650be9828c88}" relid="0x1" childrelidcntr="0x6">
+					<name>GenerateSimulink</name>
+					<atom id="id-0066-000000f2" kind="Task" role="Task" guid="{f3b05a37-e2a5-4410-9882-422594988182}" relid="0x2">
+						<name>Task</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="All" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>315,119</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="decorator" isopaque="yes">
+							<value>MGA.Decorator.Workflow</value>
+						</regnode>
+						<attribute kind="COMName">
+							<value>MGA.Interpreter.CyPhyElaborateCS</value>
+						</attribute>
+						<attribute kind="Parameters" status="meta">
+							<value></value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-000000f3" kind="Task" role="Task" guid="{f539c289-7561-4427-a4aa-486722fdc5b7}" relid="0x3">
+						<name>Task</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="All" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>315,224</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="decorator" isopaque="yes">
+							<value>MGA.Decorator.Workflow</value>
+						</regnode>
+						<attribute kind="COMName">
+							<value>MGA.Interpreter.CyPhyPython</value>
+						</attribute>
+						<attribute kind="Parameters">
+							<value>{
+  &quot;script_file&quot;: &quot;python\\CyPhySimulink.py&quot;
+}</value>
+						</attribute>
+					</atom>
+					<connection id="id-0068-00000072" kind="Flow" role="Flow" guid="{219b3267-2399-4b84-8d1f-db8e52d247f9}" relid="0x4">
+						<name></name>
+						<connpoint role="src" target="id-0066-000000f2"/>
+						<connpoint role="dst" target="id-0066-000000f3"/>
+					</connection>
+				</model>
+			</folder>
+			<model id="id-0065-000002a3" kind="TestBench" guid="{c6ef83b8-056b-433c-840a-197613dd6903}" relid="0x1" childrelidcntr="0x3">
+				<name>TB_PIDControllerReference</name>
+				<regnode name="TestBenchUniqueName" isopaque="yes">
+					<value>TB_PIDControllerReference</value>
+				</regnode>
+				<attribute kind="CopyResults" status="meta">
+					<value>false</value>
+				</attribute>
+				<attribute kind="SpreadsheetLoc" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="Type" status="meta">
+					<value>SimpleCalc</value>
+				</attribute>
+				<reference id="id-0067-00000371" kind="TopLevelSystemUnderTest" role="TopLevelSystemUnderTest" guid="{fd12b3bc-e2e7-4261-8a42-34b905531430}" relid="0x1" referred="id-0065-00000272">
+					<name>PIDControllerReference</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>259,98</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</reference>
+				<reference id="id-0067-000003cd" kind="WorkflowRef" role="WorkflowRef" guid="{3914c3da-5d2e-46a1-a995-9b657614acc7}" relid="0x3" referred="id-0065-000002a4">
+					<name>GenerateSimulink</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>588,364</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<regnode name="decorator" isopaque="yes">
+						<value>MGA.Decorator.Workflow</value>
+					</regnode>
+				</reference>
 			</model>
 		</folder>
 	</folder>

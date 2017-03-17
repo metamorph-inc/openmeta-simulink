@@ -1,0 +1,27 @@
+{
+  "Project": {
+    "Components": [],
+    "DesignSpaceModels": [],
+    "Configurations": [
+      "./designs/PIDControllerReference.adm"
+    ],
+    "TestBenches": [
+      "./test-benches/TB_PIDControllerReference.testbench.json"
+    ],
+    "Results": {
+      "UrlHints": [
+        "./results/results.metaresults.json"
+      ]
+    },
+    "Requirements": {
+      "UrlHints": [
+        "./requirements/requirements.json"
+      ],
+      "id": "",
+      "vfLink": "",
+      "text": ""
+    },
+    "CyPhyProjectFileName": "simulink-example.mga",
+    "LastModified": "2017-03-17 15-55-56"
+  }
+}
