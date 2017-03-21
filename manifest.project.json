@@ -4,11 +4,15 @@
     "DesignSpaceModels": [],
     "Configurations": [
       "./designs/PIDControllerReference.adm",
-      "./designs/Multi-instance.adm"
+      "./designs/Multi-instance.adm",
+      "./designs/Multi-endpoint.adm",
+      "./designs/Hierarchy.adm"
     ],
     "TestBenches": [
       "./test-benches/TB_PIDControllerReference.testbench.json",
-      "./test-benches/TB_Multi-instance.testbench.json"
+      "./test-benches/TB_Multi-instance.testbench.json",
+      "./test-benches/TB_Multi-endpoint.testbench.json",
+      "./test-benches/TB_Hierarchy.testbench.json"
     ],
     "Results": {
       "UrlHints": [
@@ -24,6 +28,6 @@
       "text": ""
     },
     "CyPhyProjectFileName": "simulink-example.mga",
-    "LastModified": "2017-03-17 17-50-21"
+    "LastModified": "2017-03-21 14-51-09"
   }
 }
