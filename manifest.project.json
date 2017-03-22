@@ -6,13 +6,15 @@
       "./designs/PIDControllerReference.adm",
       "./designs/Multi-instance.adm",
       "./designs/Multi-endpoint.adm",
-      "./designs/Hierarchy.adm"
+      "./designs/Hierarchy.adm",
+      "./designs/HierarchyWithOutput.adm"
     ],
     "TestBenches": [
       "./test-benches/TB_PIDControllerReference.testbench.json",
       "./test-benches/TB_Multi-instance.testbench.json",
       "./test-benches/TB_Multi-endpoint.testbench.json",
-      "./test-benches/TB_Hierarchy.testbench.json"
+      "./test-benches/TB_Hierarchy.testbench.json",
+      "./test-benches/TB_HierarchyWithOutput.testbench.json"
     ],
     "Results": {
       "UrlHints": [
@@ -28,6 +30,6 @@
       "text": ""
     },
     "CyPhyProjectFileName": "simulink-example.mga",
-    "LastModified": "2017-03-22 12-28-41"
+    "LastModified": "2017-03-22 16-39-38"
   }
 }
