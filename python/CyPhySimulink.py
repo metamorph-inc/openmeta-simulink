@@ -196,13 +196,21 @@ class SimulinkPort(object):
     def __repr__(self):
         return pprint.pformat(vars(self))
 
+def get_postprocess_scripts(model):
+    postprocessScripts = []
+    for child in model.children():
+        if child.type.name == "PostProcessing" and child.ScriptPath != "":
+            postprocessScripts.append(child.ScriptPath)
+
+    return postprocessScripts
+
 # This is the entry point    
 def invoke(focusObject, rootObject, componentParameters, **kwargs):
     log(pprint.pformat(componentParameters))
     #log(focusObject.name)
     #print repr(focusObject.name)
     #start_pdb()
-    log_object(focusObject)
+    #log_object(focusObject)
     newModel = SimulinkModel.from_test_bench(focusObject)
 
     log(repr(newModel))
@@ -211,13 +219,25 @@ def invoke(focusObject, rootObject, componentParameters, **kwargs):
     output_dir = componentParameters["output_dir"]
     shutil.copy(os.path.join("matlab", "CreateOrOverwriteModel.m"), output_dir)
 
+    postprocessScripts = get_postprocess_scripts(focusObject)
+    for script in postprocessScripts:
+        basename = os.path.basename(script)
+        shutil.copy(script, output_dir)
+
     with open(os.path.join(output_dir, "build_simulink.m"), "w") as out:
         newModel.generate_simulink_model_code(out)
 
     with open(os.path.join(output_dir, "run_simulink.m"), "w") as out:
         newModel.generate_simulink_execution_code(out)
 
-    componentParameters["runCommand"] = "matlab.exe -nodisplay -nosplash -nodesktop -wait -r \"diary('matlab.out.txt'), try, run('build_simulink.m'), run('run_simulink.m'), catch me, fprintf('%s / %s\\n',me.identifier,me.message), exit(1), end, exit(0)\""
+    with open(os.path.join(output_dir, "run.cmd"), "w") as out:
+        out.write("matlab.exe -nodisplay -nosplash -nodesktop -wait -r \"diary('matlab.out.txt'), try, run('build_simulink.m'), run('run_simulink.m'), catch me, fprintf('%s / %s\\n',me.identifier,me.message), exit(1), end, exit(0)\"\n")
+
+        for script in postprocessScripts:
+            basename = os.path.basename(script)
+            out.write("{meta_path}\\bin\\Python27\\Scripts\\python.exe {script_name}".format(meta_path=meta_path, script_name=basename))
+
+    componentParameters["runCommand"] = "cmd.exe /c run.cmd"
 
 #CyPhyPython boilerplate stuff
 def log(s):

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project SYSTEM "mga.dtd">
 
-<project guid="{9747B801-4F45-4CD4-AC80-09A930DE4715}" cdate="Thu Mar 16 11:16:37 2017" mdate="Thu Mar 16 11:16:37 2017" version="" metaguid="{88457E17-E940-0694-3228-81E7A6B0DF6B}" metaversion="14.13-t13" metaname="CyPhyML">
+<project guid="{9E06244F-65C2-49B1-9E9B-B8A1F8C9111C}" cdate="Thu Mar 16 11:16:37 2017" mdate="Thu Mar 16 11:16:37 2017" version="" metaguid="{88457E17-E940-0694-3228-81E7A6B0DF6B}" metaversion="14.13-t13" metaname="CyPhyML">
 	<name>RootFolder</name>
 	<comment></comment>
 	<author></author>
@@ -8784,7 +8784,7 @@
 					</attribute>
 				</reference>
 			</model>
-			<model id="id-0065-00001900" kind="TestBench" guid="{a69b881c-6a84-4374-8404-52cbcf718087}" relid="0x6" childrelidcntr="0x6">
+			<model id="id-0065-00001900" kind="TestBench" guid="{a69b881c-6a84-4374-8404-52cbcf718087}" relid="0x6" childrelidcntr="0x8">
 				<name>TB_HierarchyWithOutput</name>
 				<regnode name="TestBenchUniqueName" isopaque="yes">
 					<value>TB_HierarchyWithOutput</value>
@@ -8798,6 +8798,27 @@
 				<attribute kind="Type" status="meta">
 					<value>SimpleCalc</value>
 				</attribute>
+				<model id="id-0065-00001bcd" kind="PostProcessing" role="PostProcessing" guid="{6ded6850-222f-4a99-8700-2c82fd655e95}" relid="0x8" childrelidcntr="0x0">
+					<name>PostProcessing</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>770,406</value>
+							</regnode>
+						</regnode>
+						<regnode name="TBDriverMonitorAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>483,406</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="ScriptPath">
+						<value>python/ComputeMetrics.py</value>
+					</attribute>
+				</model>
 				<reference id="id-0067-00000e90" kind="WorkflowRef" role="WorkflowRef" guid="{5df4421c-948c-4c50-8b57-92388d3b1a4c}" relid="0x1" referred="id-0065-000002a4">
 					<name>GenerateSimulink</name>
 					<regnode name="PartRegs" status="undefined">
@@ -8950,6 +8971,45 @@
 							</regnode>
 						</regnode>
 					</regnode>
+				</reference>
+				<reference id="id-0067-00000f45" kind="Metric" role="Metric" guid="{2ef8032b-3747-4be4-a101-b3e1837092e9}" relid="0x7">
+					<name>SomeMetric</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>567,315</value>
+							</regnode>
+						</regnode>
+						<regnode name="ExternalPorts" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>567,315</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>567,315</value>
+							</regnode>
+						</regnode>
+						<regnode name="TBValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>567,315</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Description" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ManagedGUID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Value" status="meta">
+						<value></value>
+					</attribute>
 				</reference>
 			</model>
 		</folder>
