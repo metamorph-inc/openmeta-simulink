@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project SYSTEM "mga.dtd">
 
-<project guid="{9E06244F-65C2-49B1-9E9B-B8A1F8C9111C}" cdate="Thu Mar 16 11:16:37 2017" mdate="Thu Mar 16 11:16:37 2017" version="" metaguid="{88457E17-E940-0694-3228-81E7A6B0DF6B}" metaversion="14.13-t13" metaname="CyPhyML">
+<project guid="{334760B3-8D15-47EB-A76A-C3820A5989A5}" cdate="Thu Mar 16 11:16:37 2017" mdate="Thu Mar 16 11:16:37 2017" version="" metaguid="{88457E17-E940-0694-3228-81E7A6B0DF6B}" metaversion="14.13-t13" metaname="CyPhyML">
 	<name>RootFolder</name>
 	<comment></comment>
 	<author></author>
@@ -8784,7 +8784,7 @@
 					</attribute>
 				</reference>
 			</model>
-			<model id="id-0065-00001900" kind="TestBench" guid="{a69b881c-6a84-4374-8404-52cbcf718087}" relid="0x6" childrelidcntr="0x8">
+			<model id="id-0065-00001900" kind="TestBench" guid="{a69b881c-6a84-4374-8404-52cbcf718087}" relid="0x6" childrelidcntr="0xd">
 				<name>TB_HierarchyWithOutput</name>
 				<regnode name="TestBenchUniqueName" isopaque="yes">
 					<value>TB_HierarchyWithOutput</value>
@@ -8805,7 +8805,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>770,406</value>
+								<value>742,420</value>
 							</regnode>
 						</regnode>
 						<regnode name="TBDriverMonitorAspect" status="undefined">
@@ -8841,7 +8841,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>966,315</value>
+								<value>959,259</value>
 							</regnode>
 						</regnode>
 						<regnode name="ExternalPorts" status="undefined">
@@ -8904,7 +8904,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>966,357</value>
+								<value>959,294</value>
 							</regnode>
 						</regnode>
 						<regnode name="ExternalPorts" status="undefined">
@@ -8973,7 +8973,7 @@
 					</regnode>
 				</reference>
 				<reference id="id-0067-00000f45" kind="Metric" role="Metric" guid="{2ef8032b-3747-4be4-a101-b3e1837092e9}" relid="0x7">
-					<name>SomeMetric</name>
+					<name>MaxPlantOutput</name>
 					<regnode name="PartRegs" status="undefined">
 						<value></value>
 						<regnode name="All" status="undefined">
@@ -9009,6 +9009,132 @@
 					</attribute>
 					<attribute kind="Value" status="meta">
 						<value></value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-000010ca" kind="Parameter" role="Parameter" guid="{d8dc558a-1e4d-4f35-a669-5bd4af2b243e}" relid="0xc">
+					<name>CopyFile</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>1225,259</value>
+							</regnode>
+						</regnode>
+						<regnode name="ExternalPorts" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>1162,259</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>1162,259</value>
+							</regnode>
+						</regnode>
+						<regnode name="TBValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>1162,259</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="ComputationType" status="meta">
+						<value>Addition</value>
+					</attribute>
+					<attribute kind="DataType" status="meta">
+						<value>String</value>
+					</attribute>
+					<attribute kind="DefaultValue" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Description" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Dimension" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Disable" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="ID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ManagedGUID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Range" status="meta">
+						<value>-inf..inf</value>
+					</attribute>
+					<attribute kind="Type" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Value">
+						<value>matlab/convertmat.m</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-000010cb" kind="Parameter" role="Parameter" guid="{2d63c48d-ec7a-4393-8308-092388baa26f}" relid="0xd">
+					<name>StopFcn</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>959,329</value>
+							</regnode>
+						</regnode>
+						<regnode name="ExternalPorts" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>959,329</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>959,329</value>
+							</regnode>
+						</regnode>
+						<regnode name="TBValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>959,329</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="ComputationType" status="meta">
+						<value>Addition</value>
+					</attribute>
+					<attribute kind="DataType" status="meta">
+						<value>String</value>
+					</attribute>
+					<attribute kind="DefaultValue" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Description" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Dimension" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Disable" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="ID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ManagedGUID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Range" status="meta">
+						<value>-inf..inf</value>
+					</attribute>
+					<attribute kind="Type" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Value">
+						<value>convertmat</value>
 					</attribute>
 				</reference>
 			</model>
