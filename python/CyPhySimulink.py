@@ -254,7 +254,7 @@ def invoke(focusObject, rootObject, componentParameters, **kwargs):
 
         for script in postprocessScripts:
             basename = os.path.basename(script)
-            out.write("{meta_path}\\bin\\Python27\\Scripts\\python.exe {script_name}".format(meta_path=meta_path, script_name=basename))
+            out.write("\"{meta_path}\\bin\\Python27\\Scripts\\python.exe\" \"{script_name}\"".format(meta_path=meta_path, script_name=basename))
 
     componentParameters["runCommand"] = "cmd.exe /c run.cmd"
 
