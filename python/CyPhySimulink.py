@@ -207,6 +207,9 @@ def get_postprocess_scripts(model):
 
 # This is the entry point    
 def invoke(focusObject, rootObject, componentParameters, **kwargs):
+    log("Running elaborator")
+    elaborate(focusObject)
+
     log(pprint.pformat(componentParameters))
     #log(focusObject.name)
     #print repr(focusObject.name)
@@ -265,6 +268,13 @@ try:
         CyPhyPython.log(s)
 except ImportError:
     pass
+
+def elaborate(focusObject):
+    import win32com.client.dynamic
+    elaborate = win32com.client.dynamic.Dispatch("MGA.Interpreter.CyPhyElaborateCS")
+    succeeded = elaborate.RunInTransaction(focusObject.convert_udm2gme().Project, focusObject.convert_udm2gme(), win32com.client.dynamic.Dispatch("Mga.MgaFCOs"), 128)
+    if not succeeded:
+        raise RuntimeError("Elaborator failed")
 
 def start_pdb():
     ''' Starts pdb, the Python debugger, in a console window
