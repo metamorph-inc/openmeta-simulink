@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project SYSTEM "mga.dtd">
 
-<project guid="{F7834659-1447-4F97-B5B7-6D18FDE2972F}" cdate="Fri Mar 24 12:01:53 2017" mdate="Fri Mar 24 12:01:53 2017" version="" metaguid="{60F8A0E5-0AC8-03BD-39D9-63BB0B8AD08B}" metaversion="14.13-t14" metaname="CyPhyML">
+<project guid="{5721E59C-8E9D-47AE-B89B-94A633AD8108}" cdate="Fri Mar 24 12:01:53 2017" mdate="Fri Mar 24 12:01:53 2017" version="" metaguid="{60F8A0E5-0AC8-03BD-39D9-63BB0B8AD08B}" metaversion="14.13-t14" metaname="CyPhyML">
 	<name>RootFolder</name>
 	<comment></comment>
 	<author></author>
@@ -4199,6 +4199,21 @@
 			<name>ComponentAssemblies</name>
 			<model id="id-0065-00000046" kind="ComponentAssembly" guid="{85260b5c-da3f-4b84-bfe6-df8b08c4e1e7}" relid="0x1" childrelidcntr="0xd">
 				<name>PIDControllerReference</name>
+				<regnode name="annotations" status="undefined">
+					<value></value>
+					<regnode name="Annotation0" isopaque="yes">
+						<value>This Assembly incorporates the full model contained in simulink/my_library.slx by reference.
+
+See TB_PIDControllerReference for an example of how to copy the referenced library into
+a location where Simulink can find it at execution time.</value>
+						<regnode name="aspects" isopaque="yes">
+							<value>160,35</value>
+							<regnode name="*" isopaque="yes">
+								<value>DefaultVisibility</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</regnode>
 				<attribute kind="Cardinality" status="meta">
 					<value></value>
 				</attribute>
@@ -4491,7 +4506,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>427,91</value>
+								<value>427,133</value>
 							</regnode>
 						</regnode>
 						<regnode name="SolidModeling" status="undefined">
@@ -4544,7 +4559,7 @@
 						<value></value>
 					</attribute>
 					<attribute kind="Value">
-						<value>pidComponent</value>
+						<value>my_library</value>
 					</attribute>
 				</reference>
 				<connection id="id-0068-0000001f" kind="ConnectorComposition" role="ConnectorComposition" guid="{642c3417-e78b-4934-ae7d-47b2d344a067}" relid="0x4">
@@ -5906,6 +5921,26 @@
 			</model>
 			<model id="id-0065-0000004d" kind="ComponentAssembly" guid="{efaa4b68-14b8-4dc8-8e21-b0f9acee3159}" relid="0x3" childrelidcntr="0xb">
 				<name>UserComponent</name>
+				<regnode name="annotations" status="undefined">
+					<value></value>
+					<regnode name="Annotation0" isopaque="yes">
+						<value>This model incorporates a component from a user-supplied library--  in this
+case, the Plant subsystem from simulink/my_library.slx.
+
+When creating the TestBench to execute this ComponentAssembly in Simulink,
+make sure to specify the location of the external library&apos; as a &apos;UserLibrary&apos;
+parameter.  See &apos;TB_UserComponent&apos; for an example.</value>
+						<regnode name="aspects" isopaque="yes">
+							<value>518,30</value>
+							<regnode name="*" isopaque="yes">
+								<value>DefaultVisibility</value>
+							</regnode>
+							<regnode name="All" isopaque="yes">
+								<value>299,68</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</regnode>
 				<attribute kind="Cardinality" status="meta">
 					<value></value>
 				</attribute>
@@ -6980,6 +7015,21 @@
 			</model>
 			<model id="id-0065-00000050" kind="ComponentAssembly" guid="{01812c8a-0730-4cf1-a4d5-76e0dee4e2a9}" relid="0x6" childrelidcntr="0x15">
 				<name>HierarchyWithOutput</name>
+				<regnode name="annotations" status="undefined">
+					<value></value>
+					<regnode name="Annotation0" isopaque="yes">
+						<value>This Assembly demonstrates hierarchy, as well as how to output Simulink signals to a file for further analysis.
+
+See the accompanying TestBench (&apos;TB_HierarchyWithOutput&apos;) for an example of how to use the output
+from this design to perform post-processing and compute design metrics.</value>
+						<regnode name="aspects" isopaque="yes">
+							<value>285,46</value>
+							<regnode name="*" isopaque="yes">
+								<value>DefaultVisibility</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</regnode>
 				<attribute kind="Cardinality" status="meta">
 					<value></value>
 				</attribute>
@@ -10262,7 +10312,7 @@
 					</connection>
 				</model>
 			</folder>
-			<model id="id-0065-0000005f" kind="TestBench" guid="{c6ef83b8-056b-433c-840a-197613dd6903}" relid="0x1" childrelidcntr="0x4">
+			<model id="id-0065-0000005f" kind="TestBench" guid="{c6ef83b8-056b-433c-840a-197613dd6903}" relid="0x1" childrelidcntr="0x5">
 				<name>TB_PIDControllerReference</name>
 				<regnode name="TestBenchUniqueName" isopaque="yes">
 					<value>TB_PIDControllerReference</value>
@@ -10283,7 +10333,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>259,98</value>
+								<value>322,182</value>
 							</regnode>
 						</regnode>
 					</regnode>
@@ -10302,6 +10352,69 @@
 					<regnode name="decorator" isopaque="yes">
 						<value>MGA.Decorator.Workflow</value>
 					</regnode>
+				</reference>
+				<reference id="id-0067-000007ae" kind="Parameter" role="Parameter" guid="{b379eef5-90d4-4af9-9a52-e51bafd7d188}" relid="0x5">
+					<name>CopyFile</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>728,294</value>
+							</regnode>
+						</regnode>
+						<regnode name="ExternalPorts" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>784,294</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>784,294</value>
+							</regnode>
+						</regnode>
+						<regnode name="TBValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>784,294</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="ComputationType" status="meta">
+						<value>Addition</value>
+					</attribute>
+					<attribute kind="DataType" status="meta">
+						<value>String</value>
+					</attribute>
+					<attribute kind="DefaultValue" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Description" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Dimension" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Disable" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="ID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ManagedGUID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Range" status="meta">
+						<value>-inf..inf</value>
+					</attribute>
+					<attribute kind="Type" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Value">
+						<value>simulink/my_library.slx</value>
+					</attribute>
 				</reference>
 			</model>
 			<model id="id-0065-00000060" kind="TestBench" guid="{069145af-4de2-48ca-b1a9-698a7517b3cc}" relid="0x3" childrelidcntr="0x5">
@@ -11155,6 +11268,31 @@
 				<regnode name="TestBenchUniqueName" isopaque="yes">
 					<value>TB_HierarchyWithOutput</value>
 				</regnode>
+				<regnode name="annotations" status="undefined">
+					<value></value>
+					<regnode name="Annotation0" isopaque="yes">
+						<value>Notes:  PostProcessing specifies a Python script to run after Simulink completes.  In this example, 
+this post-processing script is used to evaluate the output from Simulink and compute metrics
+summarizing the results.
+
+StopFcn is a Simulink simulation parameter, and specifies a MATLAB function to be run after
+Simulink completes execution.  In this example, it is used as a shim converting the .mat file
+output from Simulink to a .csv file, which is simpler to consume from Python.
+
+(This example doesn&apos;t attempt to compute metrics from within MATLAB itself, because metrics
+are read from and written to &apos;testbench_manifest.json&apos;, and MATLAB does not have native JSON
+support prior to R2016b.)</value>
+						<regnode name="aspects" isopaque="yes">
+							<value>457,364</value>
+							<regnode name="*" isopaque="yes">
+								<value>DefaultVisibility</value>
+							</regnode>
+							<regnode name="All" isopaque="yes">
+								<value>411,337</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</regnode>
 				<regnode name="description" isopaque="yes">
 					<value></value>
 				</regnode>
@@ -11174,7 +11312,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>742,420</value>
+								<value>259,371</value>
 							</regnode>
 						</regnode>
 						<regnode name="TBDriverMonitorAspect" status="undefined">
@@ -11195,7 +11333,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>959,294</value>
+								<value>476,245</value>
 							</regnode>
 						</regnode>
 						<regnode name="ExternalPorts" status="undefined">
@@ -11258,7 +11396,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>959,259</value>
+								<value>476,210</value>
 							</regnode>
 						</regnode>
 						<regnode name="ExternalPorts" status="undefined">
@@ -11321,7 +11459,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>567,315</value>
+								<value>84,266</value>
 							</regnode>
 						</regnode>
 						<regnode name="ExternalPorts" status="undefined">
@@ -11360,7 +11498,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>1225,259</value>
+								<value>742,210</value>
 							</regnode>
 						</regnode>
 						<regnode name="ExternalPorts" status="undefined">
@@ -11423,7 +11561,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>959,329</value>
+								<value>476,280</value>
 							</regnode>
 						</regnode>
 						<regnode name="ExternalPorts" status="undefined">
@@ -11486,7 +11624,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>651,154</value>
+								<value>168,105</value>
 							</regnode>
 						</regnode>
 					</regnode>
@@ -11498,7 +11636,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>994,98</value>
+								<value>511,49</value>
 							</regnode>
 						</regnode>
 					</regnode>
