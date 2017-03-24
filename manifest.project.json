@@ -8,7 +8,8 @@
       "./designs/Multi-endpoint.adm",
       "./designs/Hierarchy.adm",
       "./designs/HierarchyWithOutput.adm",
-      "./designs/HierarchyWithOutputForPET.adm"
+      "./designs/HierarchyWithOutputForPET.adm",
+      "./designs/UserComponent.adm"
     ],
     "TestBenches": [
       "./test-benches/TB_PIDControllerReference.testbench.json",
@@ -16,7 +17,8 @@
       "./test-benches/TB_Multi-endpoint.testbench.json",
       "./test-benches/TB_Hierarchy.testbench.json",
       "./test-benches/TB_HierarchyWithOutput.testbench.json",
-      "./test-benches/TB_HierarchyWithOutputForPET.testbench.json"
+      "./test-benches/TB_HierarchyWithOutputForPET.testbench.json",
+      "./test-benches/TB_UserComponent.testbench.json"
     ],
     "Results": {
       "UrlHints": [
@@ -32,6 +34,6 @@
       "text": ""
     },
     "CyPhyProjectFileName": "simulink-example.mga",
-    "LastModified": "2017-03-24 11-00-48"
+    "LastModified": "2017-03-24 14-55-16"
   }
 }
