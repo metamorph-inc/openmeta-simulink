@@ -9,6 +9,7 @@ designs/
 export_for_dashboard_scoring.py
 index.html
 log/
+merged/
 requirements/
 results/
 stats/
@@ -22,6 +23,6 @@ components/**/std.out
 components/**/std.err
 components/**/config.pro
 MetaLink_*/
- 
+
 # Python
 *.pyc
