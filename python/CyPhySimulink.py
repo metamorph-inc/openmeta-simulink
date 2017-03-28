@@ -134,7 +134,7 @@ class SimulinkBlock(object):
                     paramValue = SimulinkBlock.get_adjacent_param_value(child)
                     # TODO: How do we distinguish unset values and values which were intentionally set to an empty string?
                     # For now, we consider the empty string (or no param value) to be unset, and don't set those params
-                    if paramValue is not None and paramValue != "":
+                    if paramValue is not None and paramValue[0] != "":
                         result.params[paramName] = paramValue
                 elif(child.type.name == "GenericDomainModelPort"):
                     if child.Type == "out":
@@ -152,7 +152,10 @@ class SimulinkBlock(object):
         out.write("add_block('{block_path}', [gcs, '/{name}']);\n".format(block_path=self.block_path, name=self.name))
 
         for param_name, param_value in six.iteritems(self.params):
-            out.write("set_param([gcs, '/{name}'], '{param_name}', '{param_value}');\n".format(name=self.name, param_name=param_name, param_value=param_value))
+            if param_value[1] is None:
+                out.write("set_param([gcs, '/{name}'], '{param_name}', '{param_value}');\n".format(name=self.name, param_name=param_name, param_value=param_value[0]))
+            else:
+                out.write("set_param([gcs, '/{name}'], '{param_name}', '${{{tb_param_name}}}');\n".format(name=self.name, param_name=param_name, tb_param_name=param_value[1]))
 
     def generate_simulink_connection_code(self, out):
         for port in self.outgoing_ports:
@@ -169,13 +172,34 @@ class SimulinkBlock(object):
         return model_object.parent.name # TODO: verify that this actually is a component
 
     @staticmethod
-    def get_adjacent_param_value(domainParam):
-        adjacent = domainParam.adjacent()
+    def get_adjacent_param_value(domain_param):
+        '''Returns a tuple: (current_parameter_value, testbench_parameter_name), where testbench_parameter_name
+           is None if not connected to a testbench parameter'''
+        adjacent = domain_param.adjacent()
 
         if(len(adjacent) != 1):
             return None
         else:
-            return adjacent[0].Value
+            return (adjacent[0].Value, SimulinkBlock.try_get_testbench_param_name(adjacent[0]))
+
+    @staticmethod
+    def try_get_testbench_param_name(domain_param, visited=None):
+        if visited is None:
+            visited = set()
+
+        if domain_param.parent.type.name == "TestBench":
+            return domain_param.name
+
+        visited.add(domain_param)
+
+        for connectedParam in domain_param.adjacent():
+            if connectedParam.type.name == "Parameter" and connectedParam not in visited:
+                result = SimulinkBlock.try_get_testbench_param_name(connectedParam, visited)
+                if result is not None:
+                    return result
+
+        return None
+
 
     def __repr__(self):
         return pprint.pformat(vars(self))
@@ -192,7 +216,10 @@ class SimulinkPort(object):
         result.add_connected_input_ports(port)
         return result
 
-    def add_connected_input_ports(self, port, visited = set()):
+    def add_connected_input_ports(self, port, visited=None):
+        if visited is None:
+            visited = set()
+
         '''Adds connected input ports, if they're children of
            a GenericDomainModel'''
         visited.add(port)
@@ -231,6 +258,7 @@ def invoke(focusObject, rootObject, componentParameters, **kwargs):
 
     # Copy support files
     output_dir = componentParameters["output_dir"]
+    shutil.copy(os.path.join("python", "PopulateTestBenchParams.py"), output_dir)
     shutil.copy(os.path.join("matlab", "CreateOrOverwriteModel.m"), output_dir)
 
     postprocessScripts = get_postprocess_scripts(focusObject)
@@ -243,13 +271,14 @@ def invoke(focusObject, rootObject, componentParameters, **kwargs):
             if (child.name == "CopyFile" or child.name == "UserLibrary") and child.Value != "":
                 shutil.copy(child.Value, output_dir)
 
-    with open(os.path.join(output_dir, "build_simulink.m"), "w") as out:
+    with open(os.path.join(output_dir, "build_simulink.m.in"), "w") as out:
         newModel.generate_simulink_model_code(out)
 
     with open(os.path.join(output_dir, "run_simulink.m"), "w") as out:
         newModel.generate_simulink_execution_code(out)
 
     with open(os.path.join(output_dir, "run.cmd"), "w") as out:
+        out.write("\"{meta_path}\\bin\\Python27\\Scripts\\python.exe\" PopulateTestBenchParams.py\n".format(meta_path=meta_path))
         out.write("matlab.exe -nodisplay -nosplash -nodesktop -wait -r \"diary('matlab.out.txt'), try, run('build_simulink.m'), run('run_simulink.m'), catch me, fprintf('%s / %s\\n',me.identifier,me.message), exit(1), end, exit(0)\"\n")
 
         for script in postprocessScripts:
