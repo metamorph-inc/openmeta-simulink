@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project SYSTEM "mga.dtd">
 
-<project guid="{582A8F44-0209-4312-BD0A-56C8C15DA5D2}" cdate="Fri Mar 24 12:01:53 2017" mdate="Fri Mar 24 12:01:53 2017" version="" metaguid="{60F8A0E5-0AC8-03BD-39D9-63BB0B8AD08B}" metaversion="14.13-t14" metaname="CyPhyML">
+<project guid="{54FCAAFB-D3BC-4BEC-9C31-DF34938F538A}" cdate="Fri Mar 24 12:01:53 2017" mdate="Fri Mar 24 12:01:53 2017" version="" metaguid="{60F8A0E5-0AC8-03BD-39D9-63BB0B8AD08B}" metaversion="14.13-t14" metaname="CyPhyML">
 	<name>RootFolder</name>
 	<comment></comment>
 	<author></author>
@@ -10137,7 +10137,7 @@ from this design to perform post-processing and compute design metrics.</value>
 		</folder>
 		<folder id="id-006a-00000004" relid="0x8" childrelidcntr="0x9" kind="Testing" guid="{a7fd9491-aca5-4e67-bcfd-4a3a7397f026}">
 			<name>Testing</name>
-			<folder id="id-006a-00000005" relid="0x2" childrelidcntr="0x3" kind="WorkflowDefinitionFolder" guid="{3dc0c3dc-0ba8-4027-8a9d-1c7fcfde1942}">
+			<folder id="id-006a-00000005" relid="0x2" childrelidcntr="0x4" kind="WorkflowDefinitionFolder" guid="{3dc0c3dc-0ba8-4027-8a9d-1c7fcfde1942}">
 				<name>WorkflowDefinitions</name>
 				<model id="id-0065-0000005c" kind="Workflow" guid="{3cb43cf0-8945-45ff-809f-e27f42303311}" relid="0x3" childrelidcntr="0x1">
 					<name>GenerateSimulink</name>
@@ -10185,7 +10185,7 @@ from this design to perform post-processing and compute design metrics.</value>
 							<value>0</value>
 						</regnode>
 						<attribute kind="Code">
-							<value>num_samples=25</value>
+							<value>num_samples=3</value>
 						</attribute>
 						<attribute kind="DOEType">
 							<value>Uniform</value>
@@ -10681,7 +10681,7 @@ from this design to perform post-processing and compute design metrics.</value>
 					</regnode>
 				</reference>
 			</model>
-			<model id="id-0065-00000063" kind="TestBench" guid="{a69b881c-6a84-4374-8404-52cbcf718087}" relid="0x6" childrelidcntr="0x17">
+			<model id="id-0065-00000063" kind="TestBench" guid="{a69b881c-6a84-4374-8404-52cbcf718087}" relid="0x6" childrelidcntr="0x19">
 				<name>TB_HierarchyWithOutputForPET</name>
 				<regnode name="TestBenchUniqueName" isopaque="yes">
 					<value>TB_HierarchyWithOutputForPET</value>
@@ -11223,14 +11223,14 @@ from this design to perform post-processing and compute design metrics.</value>
 						<value>0.02</value>
 					</attribute>
 				</reference>
-				<reference id="id-0067-00000079" kind="WorkflowRef" role="WorkflowRef" guid="{cb92c7fc-7961-432f-b93e-540cac1c52f3}" relid="0x17" referred="id-0065-0000005c">
+				<reference id="id-0067-000007b5" kind="WorkflowRef" role="WorkflowRef" guid="{e4be2fbe-a909-4eb0-bf3c-30afd23dfceb}" relid="0x19" referred="id-0065-0000005c">
 					<name>GenerateSimulink</name>
 					<regnode name="PartRegs" status="undefined">
 						<value></value>
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>1057,112</value>
+								<value>1204,126</value>
 							</regnode>
 						</regnode>
 					</regnode>
